@@ -30,6 +30,7 @@ class Logic(QMainWindow,Ui_MainWindow):
         self.__song_num = 1
         mixer.init()
         mixer.music.set_volume(self.__volume)
+        #https://www.geeksforgeeks.org/python-playing-audio-file-in-pygame/
 
         self.playButton.clicked.connect(lambda: self.play())
         self.skipButton.clicked.connect(lambda: self.skip())
@@ -46,6 +47,7 @@ class Logic(QMainWindow,Ui_MainWindow):
         if 1 <= song_num <= len(self.__album_images):
             album_image = self.__album_images[song_num - 1]
             pixmap = QPixmap(album_image)
+            #https://www.pythonguis.com/faq/adding-images-to-pyqt6-applications/
             self.album_image.setPixmap(pixmap)
 
     def set_song_title(self, song_num: int) -> None:
