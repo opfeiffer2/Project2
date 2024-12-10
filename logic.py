@@ -37,6 +37,7 @@ class Logic(QMainWindow,Ui_MainWindow):
         self.reverseButton.clicked.connect(lambda: self.reverse())
         self.Volume_downButton.clicked.connect(lambda: self.volume_down())
         self.Volume_upButton.clicked.connect(lambda: self.volume_up())
+        #self.mute_checkBox.stateChanged.connect(self.mute())
 
     def set_album_image(self, song_num: int) -> None:
         """
@@ -122,3 +123,6 @@ class Logic(QMainWindow,Ui_MainWindow):
             self.__volume -= 0.25
         self.set_volume_label(self.__volume)
         mixer.music.set_volume(self.__volume)
+
+
+
